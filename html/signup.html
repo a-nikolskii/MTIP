@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Signup</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
   </head>
@@ -24,7 +24,7 @@
                         aria-describedby="nameHelp"
                         placeholder="Enter name"
                         data-required="name"
-                        data-invalid-message="Please provide valid email example@example.com"
+                        data-invalid-message="Please provide valid name: 3 and more letters"
                 />
               </div>
               <div class="form-group">
@@ -36,7 +36,7 @@
                         aria-describedby="emailHelp"
                         placeholder="Enter email"
                         data-required="email"
-                        data-invalid-message="Please provide valid email example@example.com"
+                        data-invalid-message="Please provide valid email: example@example.com"
                 />
               </div>
               <div class="form-group">
@@ -56,7 +56,7 @@
                         class="form-control"
                         id="confirm-password"
                         placeholder="Confirm password"
-                        data-required="confirm-password"
+                        data-required="password"
                 />
               </div>
               <button type="submit" class="btn btn-primary" id="sign-up">Sign up</button>
@@ -82,5 +82,6 @@
       <!-- /.login-greeting-screen -->
     </div>
     <!-- /.login-page-wrapp -->
+  <script type="module" src="../js/scenario/signupScenario.js"></script>
   </body>
 </html>
