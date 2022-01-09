@@ -33,6 +33,7 @@ function onSubmit() {
 
     if(!isFormValid) return;
     saveToSessionStorage(credentials, 'credentials');
+    alert(JSON.stringify(credentials));
 
     window.location.href = "/html/credentials.html";
 }
