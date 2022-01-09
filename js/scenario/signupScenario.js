@@ -16,6 +16,7 @@ inputs.forEach(el => el.addEventListener('focus', () => removeInputError(el)));
 
 // Handlers
 function onSubmit() {
+    inputs.forEach(el => removeInputError(el));
     const credentials = {};
     const isFormValid = inputs.every(el => {
         credentials[el.dataset.required] = el.value;
