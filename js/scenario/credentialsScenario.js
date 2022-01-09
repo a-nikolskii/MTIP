@@ -1,5 +1,10 @@
 const credentials = JSON.parse(sessionStorage.getItem('credentials'));
 
+if(credentials) {
+    document.body.appendChild(createFragment(credentials));
+} else alert("Could not fins \"credentials\" in sessionStorage");
+
+
 function createFragment(credentials) {
     const fragment = document.createDocumentFragment();
     for (let key in credentials){
@@ -10,6 +15,4 @@ function createFragment(credentials) {
     return fragment;
 }
 
-if(credentials) {
-    document.body.appendChild(createFragment(credentials));
-}
+
