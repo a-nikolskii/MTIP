@@ -5,5 +5,5 @@ created by A. Nikolsky
 
 # Quick Start
 
-1. Clone project
+1. clone project
 2. open "index.html" in your browser
