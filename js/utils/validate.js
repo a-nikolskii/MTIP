@@ -9,3 +9,7 @@ export function validate(el){
     if(!regExpDic[regExpName]) return true;
     return regExpDic[regExpName].test(el.value);
 }
+
+export function comparePasswords(pass, confirmPass) {
+    return pass === confirmPass;
+}

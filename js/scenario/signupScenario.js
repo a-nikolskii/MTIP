@@ -1,5 +1,5 @@
 import signupUI from '/js/config/singupUI.js';
-import {validate} from '/js/utils/validate.js';
+import {validate, comparePasswords} from '/js/utils/validate.js';
 import {showInputError, removeInputError} from '/js/views/form.js';
 import {saveToSessionStorage} from "/js/utils/storage.js";
 
@@ -18,19 +18,21 @@ inputs.forEach(el => el.addEventListener('focus', () => removeInputError(el)));
 function onSubmit() {
     const credentials = {};
     const isFormValid = inputs.every(el => {
-        console.log(el.dataset.required);
         credentials[el.dataset.required] = el.value;
-        console.log(credentials);
-        const isInputValid = validate(el);
+        let isInputValid = validate(el);
+        if (el === inputConfirmPassword) {
+            isInputValid = isInputValid && comparePasswords(el.value, inputPassword.value)
+        }
         if (!isInputValid){
             showInputError(el)
         }
         return isInputValid;
-    });
+    })
+
 
     if(!isFormValid) return;
     saveToSessionStorage(credentials, 'credentials');
 
-    window.location.href="/html/credentials.html";
+    window.location.href = "/html/credentials.html";
 }
 
